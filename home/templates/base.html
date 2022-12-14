@@ -1,0 +1,99 @@
+ <html>
+
+	<head>
+		<title>
+			{% block title %}
+
+			{% endblock %}
+
+
+		  </title>
+
+
+   <!-- add css style -->
+
+<style type="text/css">
+
+	*{
+		padding: 0px;
+		margin:0px;
+		box-sizing: border-box;
+	}
+
+
+
+	.navbar{
+		width: 100%;
+		padding: 30px;
+		position: fixed;
+		top: 0px;
+		text-align: center;
+		transition: .5s;
+	}
+
+	.navbar ul li{
+		list-style-type: none;
+		display:inline-block;
+		padding: 10px 30px;
+		color: white;
+		font-size: 24px;
+		font-family: sans-serif;
+		cursor: pointer;
+		border-radius:10px;
+		transition: .5s;
+	}
+
+	.navbar ul li:hover{
+		background: orange;
+	}
+
+
+
+
+</style>
+
+</head>
+<body>
+
+
+
+
+<nav> <div class="header">
+
+	<div class="navbar" id='nav'>
+
+	<ul>
+	<li><a class="active" href="http://127.0.0.1:8000/">Home</a></li>
+		<li> <a href="/booking/">Ticket Booking</a></li>
+<!--		<li>Bus List</li>-->
+<!--		<li>Schedule</li>-->
+
+		<li><a href="/admin/">Admin</a></li>
+		<li><a href="{% url 'register' %}">Signup</a></li>
+		<li>
+			<a href="{% url 'password-change-view' %}" >Change Password</a>
+		</li>
+		 <li>
+			<a href="{% url 'contact' %}" >Contact Us</a>
+		</li>
+
+         <li>
+			<span>{{request.user}}</span>
+			<a href="{% url 'logout' %}" >logout </a>
+		 </li>
+
+
+	</ul>
+
+	</div>
+
+ </div>
+	</nav>
+
+<div class="box"></div>
+
+{% block content %}
+{% endblock %}
+
+</body>
+</html>

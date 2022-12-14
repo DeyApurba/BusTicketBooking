@@ -1,0 +1,74 @@
+ {% extends 'base.html' %}
+ {% block content %}
+
+ <head>
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+ </head>
+<div class="container">
+        <div class="row">
+            <div class="col-sm-6 mx-auto" style="margin-top: 70px">
+                <h2 align="center">Book Your Ticket</h2>
+                <form align="center" action="{% url 'booking' %}" method="post" >
+                    {% csrf_token %}
+                    <div class="form-group row">
+
+
+                        <label >From:</label>
+                        <select required name='from'  >
+                            <option value="">Select a location...</option>
+                            <option value="Dhaka">Dhaka</option>
+                            <option value="Chittagong">Chittagong</option>
+                            <option value="Barishal">Barishal</option>
+                            <option value="Cumilla">Cumilla</option>
+                            <option value="Khulna">Khulna</option>
+                            <option value="Jeshore">Jeshore</option>
+                            <option value="Narayanganj">Narayanganj</option>
+                            <option value="Sylhet">Sylhet</option>
+                            <option value="Dinajpur">Dinajpur</option>
+                            <option value="Chandpur">Chandpur</option>
+                        </select>
+
+                        <div class="col-10"></div>
+                    </div>
+
+                    <div class="form-group row">
+
+                     <label >To/Destination :</label>
+                        <select required name='from'  >
+                            <option value="">Select a location...</option>
+                            <option value="Dhaka">Dhaka</option>
+                            <option value="Chittagong">Chittagong</option>
+                            <option value="Barishal">Barishal</option>
+                            <option value="Cumilla">Cumilla</option>
+                            <option value="Khulna">Khulna</option>
+                            <option value="Jeshore">Jeshore</option>
+                            <option value="Narayanganj">Narayanganj</option>
+                            <option value="Sylhet">Sylhet</option>
+                            <option value="Dinajpur">Dinajpur</option>
+                            <option value="Chandpur">Chandpur</option>
+                        </select>
+
+                        <div class="col-10"></div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-10">
+                            <label>Departure date:</label>
+
+                        <div class="col-10">
+                            <input name='date' class="form-control" type="date">
+                        </div>
+                        </div>
+                    </div>
+                    <div class="pull-right">
+                        <button type="submit" class="btn btn-success float-right">Search Bus</button>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+
+    </div>
+
+{% endblock %}
